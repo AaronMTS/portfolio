@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, Tahoma, Geneva,
+    Verdana, sans-serif;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 2.5rem;
+}
+
+h1 {
+  font-size: 2.7rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.fixed-max-width {
+  max-width: 1080px;
+}
+
+.circle {
+  border-radius: 50%;
+  overflow: clip;
+}
+
+.inline {
+  display: flex;
+  vertical-align: middle;
+}
+
+.tagline-section {
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.tagline-section > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#tagline-top {
+  width: 40%;
+}
+
+#tagline-bottom {
+  width: 60%;
+}
+
+.scrolling-text-animation {
+  height: 60px;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+
+.profile-img {
+  height: 325px;
+  width: 325px;
+}
+
+.profile-img img {
+  height: 100%;
+  width: 100%;
+  transform: translateX(-5px) scale(1.05);
+}
+
+@media only screen and (max-width: 970px) {
+  .tagline-section {
+    display: block;
+  }
+
+  #tagline-top,
+  #tagline-bottom {
+    width: 100%;
+  }
+}
