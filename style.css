@@ -113,6 +113,20 @@ h2 {
   transform: translateX(-5px) scale(1.05);
 }
 
+@media (prefers-color-scheme: light) {
+  html {
+    color: #241b1d;
+    background-color: #fff5eb;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color: #fff5eb;
+    background-color: #241b1d;
+  }
+}
+
 @media only screen and (max-width: 970px) {
   .tagline-section {
     display: block;
