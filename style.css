@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:700|Inter:400");
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, Tahoma, Geneva,
-    Verdana, sans-serif;
 }
 
 html {
@@ -16,6 +17,9 @@ body {
   align-items: center;
   margin: 0;
   height: 100vh;
+  font-family: "Afacad Flux", "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, Tahoma,
+    Geneva, Verdana, sans-serif;
+  font-weight: 400;
 }
 
 main {
@@ -34,19 +38,31 @@ nav {
 }
 
 h1 {
-  font-size: 2.7rem;
+  font-size: 4.21rem; /* 67.36px */
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 3.158rem; /* 50.56px */
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 2.369rem; /* 37.92px */
+}
+
+h4 {
+  font-size: 1.777rem; /* 28.48px */
+}
+
+h5 {
+  font-size: 1.333rem; /* 21.28px */
 }
 
 p {
   font-size: 1rem;
+}
+
+small {
+  font-size: 0.75rem; /* 12px */
 }
 
 h1,
@@ -54,8 +70,17 @@ h2 {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Afacad Flux", "Inter";
+  font-weight: 700;
+}
+
 .fixed-max-width {
-  max-width: 1080px;
+  max-width: 1440px;
 }
 
 .circle {
@@ -80,6 +105,7 @@ h2 {
   height: 100%;
   display: flex;
   flex-direction: row-reverse;
+  gap: 30px;
 }
 
 .tagline-section > div {
@@ -90,27 +116,49 @@ h2 {
 
 #tagline-top {
   width: 40%;
+  gap: 25px;
+  align-items: center;
 }
 
 #tagline-bottom {
   width: 60%;
 }
 
+#tagline-bottom div h5 {
+  margin: 15px 0 0 0;
+}
+
 .scrolling-text-animation {
-  height: 60px;
+  height: 70px;
   overflow: hidden;
   text-wrap: nowrap;
 }
 
 .profile-img {
-  height: 325px;
-  width: 325px;
+  height: 350px;
+  width: 350px;
+  margin: -35px 0 0 0;
 }
 
 .profile-img img {
   height: 100%;
   width: 100%;
   transform: translateX(-5px) scale(1.05);
+}
+
+#links {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-size {
+  height: 30px;
+  width: auto;
+}
+
+.icon-size img {
+  height: 100%;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: light) {
@@ -128,8 +176,28 @@ h2 {
 }
 
 @media only screen and (max-width: 970px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+  
+  h2 {
+    font-size: 2.3rem;
+  }
+  
+  h3 {
+    font-size: 1.9rem;
+  }
+
+  h4 {
+    font-size: 1.7rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
   .tagline-section {
-    display: block;
+    flex-direction: column;
   }
 
   #tagline-top,
@@ -140,5 +208,24 @@ h2 {
   #tagline-top {
     display: grid;
     place-items: center;
+  }
+
+  #tagline-bottom {
+    align-items: center;
+  }
+
+  #tagline-bottom div h5 {
+    text-align: center;
+    margin: 20px;
+    font-weight: 500;
+  }
+
+  .scrolling-text-animation {
+    height: 48px;
+    width: fit-content;
+  }
+
+  .profile-img {
+    margin: unset;
   }
 }
