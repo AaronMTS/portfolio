@@ -3,45 +3,112 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/pfp-yellowbg.png"
+            type="image/x-icon">
         <title>My Portfolio</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <nav>
             <div class="fixed-max-width nav-links-container">
-                <a href="">Certifications</a>
-                <a href="">Past Jobs/Projects</a>
-                <a href="">Contact Me</a>
+                <a href>Past Jobs/Projects</a>
+                <a href>Certifications</a>
+                <a href>Contact Me</a>
             </div>
         </nav>
         <main class="fixed-max-width">
             <section class="tagline-section">
                 <div id="tagline-top">
                     <div class="circle profile-img">
-                        <img src="images/pfp-yellowbg.png" alt="display picture">
+                        <img src="images/pfp-yellowbg.png"
+                            alt="display picture">
                     </div>
                     <div id="links">
-                        <div id="linkedin-icon-container" class="icon-size"><img src="" alt="LinkedIn account link"></div>
-                        <div id="github-icon-container" class="icon-size"><img src="" alt="Github account link"></div>
+                        <div id="linkedin-icon-container" class="icon-size"><a
+                                href="https://www.linkedin.com/in/aaron-mark-sayson-b105a716a/"
+                                target="_blank"><img src
+                                    alt="LinkedIn account link"></a></div>
+                        <div id="github-icon-container" class="icon-size"><a
+                                href="https://github.com/AaronMTS"
+                                target="_blank"><img src
+                                    alt="Github account link"></a></div>
                     </div>
                 </div>
                 <div id="tagline-bottom">
+                    <h2>Hi👋 My name is <span style="text-wrap: nowrap;">Aaron
+                            Mark Sayson, </span></h2>
                     <div class="inline">
-                        <h2 style="padding-right: 12px; text-wrap: nowrap;">I am a</h2>
-                        <div class="scrolling-text-animation">
+                        <h2
+                            style="padding-right: 10px; text-wrap: nowrap;">a</h2>
+                        <span class="scrolling-text-animation">
                             <h2>web developer</h2>
-                            <h2>virtual assistant</h2>
-                        </div>
+                        </span>
                     </div>
                     <div>
-                        <h5>from the Philippines with more than 2 years of experience in the IT field.</h5>
+                        <h5>from the Philippines with more than 2 years of
+                            experience in the IT field.</h5>
                     </div>
                 </div>
             </section>
-            <section class="certificates-section"></section>
-            <section class="jobs-project-section"></section>
-            <section class="contact-me-section"></section>
+            <section class="jobs-project-section" id="jobs/proj">
+                <div class="section-title">
+                    <h3>Past Jobs&sol;Projects</h3>
+                </div>
+                <div id="pjp-section-content">
+                    <div class="pjp-container">
+                        <button class="btn-to-repo">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                stroke="#000000"
+                                stroke-width="0.00024000000000000003"
+                                class="svg-icon"><g
+                                    id="SVGRepo_bgCarrier"
+                                    stroke-width="0"></g><g
+                                    id="SVGRepo_tracerCarrier"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></g><g
+                                    id="SVGRepo_iconCarrier"> <path
+                                        d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z"></path>
+                                </g></svg>
+                        </button>
+                        <div class="pjp-image-container"
+                            style="background-image: url(./images/pjp/contact-form.webp);"></div>
+                        <div class="pjp-desc">
+                            <p>A simple project that showcases how submitted
+                                data from HTML forms are handled using
+                                JavaScript and PHP.</p>
+                        </div>
+                    </div>
+                    <div class="pjp-container">
+                        <button class="btn-to-repo">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                stroke="#000000"
+                                stroke-width="0.00024000000000000003"
+                                class="svg-icon"><g
+                                    id="SVGRepo_bgCarrier"
+                                    stroke-width="0"></g><g
+                                    id="SVGRepo_tracerCarrier"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></g><g
+                                    id="SVGRepo_iconCarrier"> <path
+                                        d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z"></path>
+                                </g></svg>
+                        </button>
+                        <div class="pjp-image-container"
+                            style="background-image: url(./images/pjp/emp-sys.webp);"></div>
+                        <div class="pjp-desc">
+                            <p>A simple project that showcases how submitted
+                                data from HTML forms are handled using
+                                JavaScript and PHP.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="certificates-section" id="cert">
+            </section>
+            <section class="contact-me-section" id="contact"></section>
         </main>
-    <script src="script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
