@@ -32,12 +32,12 @@ window.addEventListener("load", () => {
     websiteLuminance = getLuminance(htmlBGColor[0], htmlBGColor[1], htmlBGColor[2]);
 
     if (websiteLuminance < 128) {
-        githubIcon.firstElementChild.setAttribute("src", "images/github-mark-white.png");
-        linkedInIcon.firstElementChild.setAttribute("src", "images/linkedin_icon_white.png");
+        githubIcon.firstElementChild.firstElementChild.setAttribute("src", "images/github-mark-white.png");
+        linkedInIcon.firstElementChild.firstElementChild.setAttribute("src", "images/linkedin_icon_white.png");
     }
     else {
-        githubIcon.firstElementChild.setAttribute("src", "images/github-mark.png");
-        linkedInIcon.firstElementChild.setAttribute("src", "images/linkedin_icon.png");
+        githubIcon.firstElementChild.firstElementChild.setAttribute("src", "images/github-mark.png");
+        linkedInIcon.firstElementChild.firstElementChild.setAttribute("src", "images/linkedin_icon.png");
     }
 
     console.log(htmlBGColor);
