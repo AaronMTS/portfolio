@@ -1,5 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const scrollingContainer = document.querySelector(".scrolling-text-animation");
+    const pjpsContainer = document.querySelector("#pjp-section-content");
+    // let isScrolling = false;
+
+    // pjpsContainer.addEventListener("scroll", (Event) => {
+    //     isScrolling = true;
+    // });
+
+    pjpsContainer.addEventListener("wheel", (Event) => {
+        if (Math.abs(Event.deltaY) > 0) {
+            Event.preventDefault();
+            pjpsContainer.scrollLeft += Event.deltaY;
+            console.log(Event);
+        }
+    });
 });
 
 window.addEventListener("load", () => {
