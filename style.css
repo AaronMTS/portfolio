@@ -9,6 +9,15 @@
     sans-serif, Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
+
 h1,
 h2,
 h3,
@@ -193,6 +202,7 @@ h5 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding-bottom: 20px;
 }
 
 .jobs-project-section .section-title {
@@ -203,26 +213,29 @@ h5 {
   height: 80%;
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
 }
 
 .pjp-container {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  width: 30%;
-  min-width: 300px;
+  min-width: 325px;
   max-width: 450px;
   background-color: #eee;
   border-radius: 10px;
-  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 3px 8px;
+  overflow: hidden;
 }
 
+/* .pjp-container:hover .pjp-image-container {
+  background-size:auto;
+} */
+
 .btn-to-repo {
-  position: absolute;
-  top: 8px;
-  right: 8px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -231,7 +244,7 @@ h5 {
   background-color: #282936;
   border: none;
   border-radius: 20px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(160, 160, 160, 0.4) 0px 0px 0px 1.5px;
   transition: all 0.3s ease;
   overflow: hidden;
 }
@@ -243,8 +256,17 @@ h5 {
   text-align: center;
 }
 
-.btn-to-repo::before {
+.pjp-link {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+}
+
+.link-to-repo .btn-to-repo::before {
   content: "View repository";
+}
+
+.btn-to-repo::before {
   position: absolute;
   font-size: 2px;
   text-wrap: nowrap;
@@ -279,6 +301,8 @@ h5 {
   width: 100%;
   background-position: 50%;
   background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .pjp-container .pjp-desc {
@@ -287,13 +311,8 @@ h5 {
   padding: 0 15px;
 }
 
-@keyframes hue {
-  from {
-    filter: hue-rotate(0deg);
-  }
-  to {
-    filter: hue-rotate(-360deg);
-  }
+.pjp-desc p {
+  margin: 1em 0;
 }
 
 @media (prefers-color-scheme: light) {
