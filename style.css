@@ -41,6 +41,8 @@ p {
   --white: #fff5eb;
   --black: #241b1d;
   --yellow: #ffeb3b;
+
+  scroll-behavior: smooth;
 }
 
 body {
@@ -64,6 +66,10 @@ main {
   z-index: 1;
 }
 
+main > section {
+  max-height: 768px !important;
+}
+
 nav {
   width: 100%;
   display: grid;
@@ -74,11 +80,11 @@ nav {
 }
 
 h1 {
-  font-size: clamp(2.375 rem, 10vw, 4.21rem);
+  font-size: clamp(2.325rem, 10vw, 4.21rem);
 }
 
 h2 {
-  font-size: clamp(1.875rem, 8vw, 3.158rem);
+  font-size: clamp(1.825rem, 8vw, 3.158rem);
 }
 
 h3 {
@@ -140,7 +146,7 @@ h5 {
   backdrop-filter: blur(10px);
 }
 
-.nav-links-container a {
+.nav-links-container a, .ct a, .social-links a {
   text-decoration: none;
 }
 
@@ -173,7 +179,6 @@ h5 {
 
 .scrolling-text-animation {
   position: relative;
-  height: 70px;
   display: flex;
   overflow: hidden;
   text-wrap: nowrap;
@@ -205,16 +210,6 @@ h5 {
   gap: 10px;
 }
 
-.icon-size {
-  height: 30px;
-  width: auto;
-}
-
-.icon-size img {
-  height: 100%;
-  width: 100%;
-}
-
 .jobs-project-section {
   height: 100vh;
   width: 100%;
@@ -224,12 +219,12 @@ h5 {
   padding-bottom: 20px;
 }
 
-.jobs-project-section .section-title {
+/* .jobs-project-section .section-title {
   height: 10%;
-}
+} */
 
 #pjp-section-content {
-  height: 80%;
+  height: 75%;
   width: 100%;
   display: flex;
   gap: 25px;
@@ -244,9 +239,10 @@ h5 {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  height: 100%;
   min-width: 325px;
   width: calc(33% - 12.5px);
-  max-width: 500px;
+  max-width: 450px;
   background-color: #eee;
   border-radius: 10px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 3px 8px;
@@ -321,7 +317,8 @@ h5 {
 }
 
 .pjp-image-container {
-  height: 80%;
+  flex-grow: 1;
+  max-height: calc(100% - 95px);
   width: 100%;
   background-position: 50%;
   background-size: cover;
@@ -329,7 +326,15 @@ h5 {
   cursor: pointer;
 }
 
+.pjp-image-container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50%;
+}
+
 .pjp-container .pjp-desc {
+  height: 95px;
   text-align: justify;
   color: #111;
   padding: 0 15px;
@@ -337,6 +342,78 @@ h5 {
 
 .pjp-desc p {
   margin: 1em 0;
+}
+
+.contact-me-section {
+  padding: 4rem;
+  display: flex;
+  gap: 25px;
+  height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.ct-section-content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ct-section-content p {
+  font-size: clamp(0.7rem, 3.2vw, 1.1rem);
+}
+
+.ct-content-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.ct-list, .social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ct, .ct-link > a {
+  display: flex;
+  gap: 5px;
+}
+
+.ct {
+  align-items: center;
+}
+
+.ct-link > a {
+  align-items: top;
+}
+
+.ct > svg, .icon-size > svg {
+  width: 22px;
+  aspect-ratio: 1;
+}
+
+.ct-side-img {
+  position: relative;
+  width: 60%;
+  overflow: hidden;
+}
+
+.ct-side-img > .ct-svg-art {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+}
+
+.ct-side-img > #visual {
+  object-fit: cover;
+}
+
+.ct-divider {
+  width: 80%;
 }
 
 .with-bg {
@@ -367,6 +444,10 @@ h5 {
   cursor: pointer;
 }
 
+.yellow {
+  color: var(--yellow);
+}
+
 @media (prefers-color-scheme: light) {
   html {
     color: var(--black);
@@ -377,7 +458,15 @@ h5 {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
-  .nav-links-container > a {
+  .nav-links-container > a, .social-links a {
+    color: var(--black);
+  }
+
+  .ct-svg-icon {
+    fill: #000;
+  }
+
+  .ct a {
     color: var(--black);
   }
 }
@@ -388,14 +477,22 @@ h5 {
     background-color: var(--black);
   }
 
-  .nav-links-container > a {
+  .nav-links-container > a, .social-links a {
+    color: var(--white);
+  }
+
+  .ct-svg-icon {
+    fill: #fff;
+  }
+
+  .ct a {
     color: var(--white);
   }
 }
 
 @media only screen and (max-width: 850px) {
   nav {
-    display: none;
+    position: sticky;
   }
 
   .tagline-section {
@@ -448,12 +545,34 @@ h5 {
     width: 70%;
   }
 
-  .icon-size {
-    width: 25px;
-    height: 25px;
+  .jobs-project-section {
+    padding: 4rem 0;
   }
 
   .pjp-container {
     width: 100%;
+  }
+
+  .pjp-image-container > img {
+    object-fit: cover;
+  }
+
+  .pjp-container .pjp-desc {
+    height: 75px;
+  }
+
+  .contact-me-section {
+    padding: 0 4rem 4rem 4rem;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .contact-me-section > * {
+    width: 100%;
+  }
+
+  .ct-side-img > .ct-svg-art {
+    width: unset;
+    height: 100%;
   }
 }
