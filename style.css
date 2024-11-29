@@ -41,6 +41,7 @@ p {
   --white: #fff5eb;
   --black: #241b1d;
   --yellow: #ffeb3b;
+  --dark-blue: #282936;
 
   scroll-behavior: smooth;
 }
@@ -97,6 +98,10 @@ h4 {
 
 h5 {
   font-size: clamp(0.875rem, 4vw, 1.333rem);
+}
+
+h6 {
+  font-size: clamp(0.7rem, 3.5vw, 1.2rem);
 }
 
 p {
@@ -260,7 +265,7 @@ h5 {
   text-align: center;
   height: 34px;
   width: 34px;
-  background-color: #282936;
+  background-color: var(--dark-blue);
   border: none;
   border-radius: 20px;
   box-shadow: rgba(160, 160, 160, 0.4) 0px 0px 0px 1.5px;
@@ -279,6 +284,7 @@ h5 {
   position: absolute;
   top: 8px;
   right: 9px;
+  z-index: 3;
 }
 
 .link-to-repo .btn-to-repo::before {
@@ -316,25 +322,84 @@ h5 {
   transform: translateY(4px);
 }
 
-.pjp-image-container {
-  flex-grow: 1;
+.pjp-overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
   max-height: calc(100% - 95px);
+  height: 100%;
   width: 100%;
-  background-position: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: rgba(40, 41, 54, 0.45);
+  backdrop-filter: blur(4px);
+  border-radius: 10px 10px 0 0;
+  z-index: 2;
+  transition: opacity 0.45s ease;
+}
+
+.pjp-overlay, .pjp-overlay * {
   cursor: pointer;
+}
+
+.pjp-to-full-size {
+  height: 25px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.pjp-svg-arrow {
+  position: absolute;
+  height: 35px;
+  aspect-ratio: 1;
+}
+
+.pjp-svg-arrow > img {
+  height: 100%;
+  width: 100%;
+}
+
+.pjp-svg-arrow.to45deg {
+  top: 5px;
+  left: 5px;
+}
+
+.pjp-svg-arrow.to225deg {
+  bottom: 10px;
+  right: 5px;
+}
+
+.pjp-to-full-size h6 {
+  font-weight: 400;
+}
+
+.pjp-image-container {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: calc(100% - 95px);
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .pjp-image-container > img {
   height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: 50%;
+  width: auto;
+  transition: transform 0.45s ease;
 }
 
+/* .pjp-image-container > img:hover {
+  transform: scale(0.5);
+} */
+
 .pjp-container .pjp-desc {
-  height: 95px;
+  height: 100px;
   text-align: justify;
   color: #111;
   padding: 0 15px;

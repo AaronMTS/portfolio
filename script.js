@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const pjpsContainer = document.querySelector("#pjp-section-content");
+    const pjpWrapper = document.querySelectorAll(".pjp-container");
+    const pjpImageContainers = document.querySelectorAll(".pjp-image-container");
+    const pjpOverlays = document.querySelectorAll(".pjp-overlay");
     // let isScrolling = false;
 
     // pjpsContainer.addEventListener("scroll", (Event) => {
@@ -10,8 +13,30 @@ document.addEventListener("DOMContentLoaded", () => {
         if (Math.abs(Event.deltaY) > 0) {
             Event.preventDefault();
             pjpsContainer.scrollLeft += Event.deltaY;
-            console.log(Event);
         }
+    });
+
+    pjpOverlays.forEach(element => {
+        let imgContainer = element.previousElementSibling;
+        let imgChild = imgContainer.firstElementChild;
+
+        if (imgChild.clientWidth < imgContainer.clientWidth) {
+            imgChild.style.transform = `scale(${imgContainer.clientWidth/imgChild.clientWidth})`;
+        }
+    
+        element.addEventListener("mouseover", () => {
+            if (imgChild.clientWidth > imgContainer.clientWidth) {
+                imgChild.style.transform = `scale(${imgContainer.clientWidth/imgChild.clientWidth})`;
+            }
+            element.style.opacity = 1;
+        });
+
+        element.addEventListener("mouseout", () => {
+            if (imgChild.clientWidth > imgContainer.clientWidth) {
+                imgChild.style.transform = `unset`;
+            }
+            element.style.opacity = 0;
+        });
     });
 });
 
