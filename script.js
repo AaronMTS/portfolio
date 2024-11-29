@@ -20,20 +20,23 @@ document.addEventListener("DOMContentLoaded", () => {
         let imgContainer = element.previousElementSibling;
         let imgChild = imgContainer.firstElementChild;
 
-        if (imgChild.clientWidth < imgContainer.clientWidth) {
+        if (imgChild.clientWidth < imgContainer.clientWidth && window.innerWidth > 850) {
             imgChild.style.transform = `scale(${imgContainer.clientWidth/imgChild.clientWidth})`;
         }
     
         element.addEventListener("mouseover", () => {
             if (imgChild.clientWidth > imgContainer.clientWidth) {
-                imgChild.style.transform = `scale(${imgContainer.clientWidth/imgChild.clientWidth})`;
+                imgChild.style.transform = `translate(0) scale(${imgContainer.clientWidth/imgChild.clientWidth})`;
+            }
+            else if (imgChild.clientHeight > imgContainer.clientHeight) {
+                imgChild.style.transform = `translate(0) scale(${imgContainer.clientHeight/imgChild.clientHeight})`;
             }
             element.style.opacity = 1;
         });
 
         element.addEventListener("mouseout", () => {
             if (imgChild.clientWidth > imgContainer.clientWidth) {
-                imgChild.style.transform = `unset`;
+                imgChild.style.transform = `initial`;
             }
             element.style.opacity = 0;
         });
