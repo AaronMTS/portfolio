@@ -260,24 +260,24 @@ h5 {
   background-size:auto;
 } */
 
-.btn-to-repo {
+.pjp-btn {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  text-align: center;
   height: 34px;
   width: 34px;
+  padding-left: 10px;
   background-color: var(--dark-blue);
   border: none;
   border-radius: 20px;
   box-shadow: rgba(160, 160, 160, 0.4) 0px 0px 0px 1.5px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   overflow: hidden;
 }
 
-.btn-to-repo,
-.btn-to-repo *,
-.btn-to-repo::before {
+.pjp-btn,
+.pjp-btn *,
+.pjp-btn::before {
   cursor: pointer;
   text-align: center;
 }
@@ -287,40 +287,59 @@ h5 {
   top: 8px;
   right: 9px;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-end;
 }
 
 .link-to-repo .btn-to-repo::before {
   content: "View repository";
-}
-
-.btn-to-repo::before {
   position: absolute;
   font-size: 2px;
   text-wrap: nowrap;
   right: -40px;
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: all 0.45s ease;
 }
 
-.btn-to-repo .svg-icon {
-  height: 75%;
+/* .btn-to-zoom::before {
+  content: "View full size";
+  position: absolute;
+  font-size: 2px;
+  text-wrap: nowrap;
+  right: -40px;
+  opacity: 0;
+  transition: all 0.45s ease;
+} */
+
+.pjp-btn .svg-icon {
+  height: 45%;
   aspect-ratio: 1;
-  fill: #fff;
+  transition: all 0.45s ease;
+}
+
+.pjp-btn:hover {
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 12px;
 }
 
 .btn-to-repo:hover {
-  height: 40px;
   width: 140px;
-  border-radius: 20px;
 }
 
-.btn-to-repo:hover::before {
+/* .btn-to-zoom:hover {
+  width: 123px;
+} */
+
+.pjp-btn:hover::before {
   font-size: 15px;
-  right: 35px;
+  right: 12px;
   opacity: 1;
 }
 
-.btn-to-repo:active {
+.pjp-btn:active {
   transform: translateY(4px);
 }
 
