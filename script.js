@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pjpWrapper = document.querySelectorAll(".pjp-container");
     const pjpImageContainers = document.querySelectorAll(".pjp-image-container");
     const pjpOverlays = document.querySelectorAll(".pjp-overlay");
+    // const btnToZoom = document.querySelectorAll(".btn-to-zoom");
     const modalWrapper = document.querySelectorAll(".modal");
     const zoomImgModal = document.querySelector("#pjp-zoom-img");
     const zoomImgMainContainer = document.querySelector(".pjp-zoom-img-content");
@@ -69,41 +70,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    prevArrow.addEventListener("click", () => {
-        if (prevArrow.getBoundingClientRect().left === prevArrow.nextElementSibling.getBoundingClientRect().left || currentPos === -100) {
-            prevArrow.style.display = "none";
-        }
-        else {
-            prevArrow.style.display = "flex";
-        }
+    // prevArrow.addEventListener("click", () => {
+    //     if (prevArrow.getBoundingClientRect().left === prevArrow.nextElementSibling.getBoundingClientRect().left || currentPos === -100) {
+    //         prevArrow.style.display = "none";
+    //     }
+    //     else {
+    //         prevArrow.style.display = "flex";
+    //     }
 
-        if (nextArrow.style.display === "none") {
-            nextArrow.style.display = "flex";
-        }
+    //     if (nextArrow.style.display === "none") {
+    //         nextArrow.style.display = "flex";
+    //     }
 
-        currentPos += 100;
-        zoomImgWrapper.style.transform = `translateX(${currentPos}%)`;
-    });
+    //     currentPos += 100;
+    //     zoomImgWrapper.style.transform = `translateX(${currentPos}%)`;
+    // });
 
-    nextArrow.addEventListener("click", () => {
-        let container = nextArrow.previousElementSibling;
-        let containerWidth = nextArrow.previousElementSibling.getBoundingClientRect().width;
-        if (nextArrow.getBoundingClientRect().right !== container.getBoundingClientRect().right) {
-            currentContainerRight += Math.abs(container.getBoundingClientRect().right);
+    // nextArrow.addEventListener("click", () => {
+    //     let container = nextArrow.previousElementSibling;
+    //     let containerWidth = nextArrow.previousElementSibling.getBoundingClientRect().width;
+    //     if (nextArrow.getBoundingClientRect().right !== container.getBoundingClientRect().right) {
+    //         currentContainerRight += Math.abs(container.getBoundingClientRect().right);
 
-            if (currentContainerRight === containerWidth || (Math.abs(currentPos) / 100) - zoomImgWrapper.childElementCount === 1) {
-                nextArrow.style.display = "none";
-                prevArrow.style.display = "flex";
-            }
-        }
+    //         if (currentContainerRight === containerWidth || (Math.abs(currentPos) / 100) - zoomImgWrapper.childElementCount === 1) {
+    //             nextArrow.style.display = "none";
+    //             prevArrow.style.display = "flex";
+    //         }
+    //     }
 
-        if (prevArrow.style.display === "none") {
-            prevArrow.style.display = "flex";
-        }
+    //     if (prevArrow.style.display === "none") {
+    //         prevArrow.style.display = "flex";
+    //     }
 
-        currentPos -= 100;
-        zoomImgWrapper.style.transform = `translateX(${currentPos}%)`;
-    });
+    //     currentPos -= 100;
+    //     zoomImgWrapper.style.transform = `translateX(${currentPos}%)`;
+    // });
 });
 
 window.addEventListener("load", () => {
