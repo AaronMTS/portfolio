@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
 
     yearContainer.innerHTML = new Date().getFullYear();
-    
+
     pjpOverlays.forEach(element => {
         let imgContainer = element.previousElementSibling;
         let imgChild = imgContainer.firstElementChild;
@@ -37,20 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     
         element.addEventListener("mouseover", () => {
-            if (imgChild.clientWidth > imgContainer.clientWidth) {
-                imgChild.style.transform = `translate(0) scale(${imgContainer.clientWidth/imgChild.clientWidth})`;
+            if (window.innerWidth > 850) {
+                if (imgChild.clientWidth > imgContainer.clientWidth) {
+                    imgChild.style.transform = `translate(0) scale(${imgContainer.clientWidth/imgChild.clientWidth})`;
+                }
+                else if (imgChild.clientHeight > imgContainer.clientHeight) {
+                    imgChild.style.transform = `translate(0) scale(${imgContainer.clientHeight/imgChild.clientHeight})`;
+                }
+                element.style.opacity = 1;
             }
-            else if (imgChild.clientHeight > imgContainer.clientHeight) {
-                imgChild.style.transform = `translate(0) scale(${imgContainer.clientHeight/imgChild.clientHeight})`;
-            }
-            element.style.opacity = 1;
         });
 
         element.addEventListener("mouseout", () => {
-            if (imgChild.clientWidth > imgContainer.clientWidth) {
-                imgChild.style.transform = `initial`;
+            if (window.innerWidth > 850) {
+                if (imgChild.clientWidth > imgContainer.clientWidth) {
+                    imgChild.style.transform = `initial`;
+                }
+                element.style.opacity = 0;
             }
-            element.style.opacity = 0;
         });
 
         element.addEventListener("click", Event => {
