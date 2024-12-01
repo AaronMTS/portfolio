@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const zoomImgModal = document.querySelector("#pjp-zoom-img");
     const zoomImgMainContainer = document.querySelector(".pjp-zoom-img-content");
     const zoomImgWrapper = document.querySelector(".zoom-img-wrapper");
-    const prevArrow = document.querySelector(".prev-arrow");
-    const nextArrow = document.querySelector(".next-arrow");
+    // const prevArrow = document.querySelector(".prev-arrow");
+    // const nextArrow = document.querySelector(".next-arrow");
     let currentPos = 0;
     let currentContainerRight = 0;
     // let isScrolling = false;
@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //     isScrolling = true;
     // });
 
-    pjpsContainer.addEventListener("wheel", (Event) => {
-        if (Math.abs(Event.deltaY) > 0) {
-            Event.preventDefault();
-            pjpsContainer.scrollLeft += Event.deltaY;
-        }
-    });
+    // pjpsContainer.addEventListener("wheel", (Event) => {
+    //     if (Math.abs(Event.deltaY) > 0) {
+    //         Event.preventDefault();
+    //         pjpsContainer.scrollLeft += Event.deltaY;
+    //     }
+    // });
 
     pjpOverlays.forEach(element => {
         let imgContainer = element.previousElementSibling;
@@ -51,11 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         element.addEventListener("click", Event => {
+            let pjpImgSource = element.previousElementSibling.firstElementChild.src;
+            zoomImgWrapper.innerHTML = `
+                <div class="zoom-img-container">
+                    <img src="${pjpImgSource.substring(pjpImgSource.match(/images\//).index)}" alt>
+                </div>
+            `;
             zoomImgModal.style.visibility = "visible";
             zoomImgModal.style.opacity = 1;
-            if (prevArrow.getBoundingClientRect().left === prevArrow.nextElementSibling.getBoundingClientRect().left) {
-                prevArrow.style.display = "none";
-            }
+            // if (prevArrow.getBoundingClientRect().left === prevArrow.nextElementSibling.getBoundingClientRect().left) {
+            //     prevArrow.style.display = "none";
+            // }
+            // console.log(pjpImgSource.substring(pjpImgSource.match(/images\//).index));
         });
     });
 
