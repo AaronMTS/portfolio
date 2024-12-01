@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // const nextArrow = document.querySelector(".next-arrow");
     let currentPos = 0;
     let currentContainerRight = 0;
+    const yearContainer = document.querySelector(".year");
     // let isScrolling = false;
 
     // pjpsContainer.addEventListener("scroll", (Event) => {
@@ -25,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //     }
     // });
 
+    yearContainer.innerHTML = new Date().getFullYear();
+    
     pjpOverlays.forEach(element => {
         let imgContainer = element.previousElementSibling;
         let imgChild = imgContainer.firstElementChild;
