@@ -470,16 +470,21 @@ h5 {
 }
 
 .ct {
-  align-items: center;
+  height: 30px;
 }
 
 .ct-link > a {
   width: max-content;
 }
 
-.ct > svg,
-.icon-size > svg {
-  width: 22px;
+.icon-size {
+  width: 21px;
+  aspect-ratio: 1;
+  padding-top: 1.5px;
+}
+
+.icon-size > svg, .icon-size > img {
+  width: 100%;
   aspect-ratio: 1;
 }
 
