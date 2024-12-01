@@ -758,7 +758,7 @@ h5 {
   }
 
   .contact-me-section {
-    padding: 0 4rem 4rem 4rem;
+    padding: 0 2rem 4rem 2rem;
     flex-direction: column;
     gap: 60px;
     height: max-content;
@@ -770,5 +770,9 @@ h5 {
 
   .ct-side-img {
     display: none;
+  }
+
+  .ct-link > a {
+    align-items: center;
   }
 }
