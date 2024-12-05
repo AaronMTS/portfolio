@@ -555,8 +555,8 @@ h5 {
   display: grid;
   place-items: center;
   border: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
   transition: all 0.2s ease;
 }
 
@@ -590,7 +590,7 @@ h5 {
 
 #pjp-zoom-img .pjp-zoom-img-content {
   height: 80%;
-  max-height: 768px;
+  max-height: 80vh !important;
   width: 80%;
   /* overflow: hidden; */
   position: relative;
@@ -785,5 +785,9 @@ footer {
 
   .ct-link > a {
     align-items: center;
+  }
+
+  #pjp-zoom-img .pjp-zoom-img-content {
+    max-height: 55vh !important;
   }
 }
