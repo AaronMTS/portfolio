@@ -78,6 +78,7 @@ nav {
   position: absolute;
   top: 0;
   z-index: 2;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, .8);
 }
 
 h1 {
@@ -232,9 +233,11 @@ h5 {
   padding-bottom: 20px;
 }
 
-/* .jobs-project-section .section-title {
-  height: 10%;
-} */
+.jobs-project-section .section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
 #pjp-section-content {
   height: 75%;
@@ -249,11 +252,12 @@ h5 {
 
 .pjp-container {
   position: relative;
+  flex: 1 1 375px;
   display: flex;
-  flex-shrink: 1;
-  flex-basis: 375px;
   flex-direction: column;
   height: 450px;
+  min-width: 310px;
+  max-width: 33%;
   background-color: #eee;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, .8);
@@ -594,9 +598,9 @@ h5 {
 }
 
 #pjp-zoom-img .pjp-zoom-img-content {
-  height: 80%;
-  max-height: 80vh !important;
-  width: 80%;
+  height: 85%;
+  max-height: 85vh !important;
+  width: 85%;
   /* overflow: hidden; */
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
